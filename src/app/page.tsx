@@ -13,7 +13,7 @@ export default function Home() {
       <Harness />
       <Comparison />
       {/* <Problem /> */}
-      <Packages />
+      {/* <Packages /> */}
       <CodeShowcase />
       <Contact />
     </main>
