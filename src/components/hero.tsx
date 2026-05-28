@@ -43,7 +43,7 @@ export default function Hero() {
 
             {/* Headline — exact copy from Confluence */}
             <h1 className="text-5xl sm:text-6xl lg:text-[62px] font-bold leading-[1.05] tracking-tight text-[#f4f4f5]">
-              Build production<br />
+              Build enterprise-grade<br />
               <span className="gradient-text">AI agents</span> in<br />
               TypeScript
             </h1>

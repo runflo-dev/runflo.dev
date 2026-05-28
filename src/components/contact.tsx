@@ -17,11 +17,12 @@ export default function Contact() {
     e.preventDefault()
     setStatus('sending')
     try {
-      await fetch('https://formspree.io/f/xpwrqjkl', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
+      if (!res.ok) throw new Error('Failed')
       setStatus('sent')
       setForm({ name: '', email: '', role: '', message: '' })
     } catch {
