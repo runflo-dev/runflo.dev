@@ -75,7 +75,7 @@ export default function Hero() {
             {/* Stats */}
             <div className="flex flex-wrap gap-x-8 gap-y-3 pt-1">
               {[
-                { n: '27+', label: 'Packages' },
+                { n: '28+', label: 'Packages' },
                 { n: 'MIT', label: 'License' },
                 { n: '1 cmd', label: 'To deploy' },
                 { n: '0', label: 'State loss on crash' },

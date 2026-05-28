@@ -16,6 +16,7 @@ const featured: Pkg[] = [
   { name: '@runflo/mcp',     desc: 'Model Context Protocol server + client. Connect any MCP tool to your agents.',       tier: 'Next',  gradient: 'from-[#7A3CFF] to-[#3B5BFF]' },
   { name: '@runflo/rag',     desc: 'Full RAG pipeline. Chunking, embedding, and retrieval in one composable package.',   tier: 'Next',  gradient: 'from-[#00C2FF] to-[#3B5BFF]' },
   { name: '@runflo/guard',   desc: 'Guardrails, PII detection, and content filtering for production-safe agents.',       tier: 'Next',  gradient: 'from-[#3B5BFF] to-[#7A3CFF]' },
+  { name: '@runflo/harness', desc: 'Harness design for long-running agents. Planner, generator, and evaluator roles with durable context resets and closed-loop verification.', tier: 'Next',  gradient: 'from-[#00C2FF] to-[#7A3CFF]' },
   { name: '@runflo/hitl',    desc: 'Human-in-the-loop approval flows. Pause an agent and wait for a human decision.',   tier: 'Soon',  gradient: 'from-[#7A3CFF] to-[#00C2FF]' },
   { name: '@runflo/swarm',   desc: 'Multi-agent coordination. Spawn, delegate, and collect results across agent fleets.', tier: 'Soon',  gradient: 'from-[#00C2FF] to-[#7A3CFF]' },
   { name: '@runflo/voice',   desc: 'Voice agent integration via Retell AI. Phone calls and voice interfaces for agents.', tier: 'Soon',  gradient: 'from-[#3B5BFF] to-[#00C2FF]' },
@@ -39,7 +40,7 @@ export default function Packages() {
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.02] text-xs text-[#a1a1aa] mb-5">
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'linear-gradient(135deg, #00C2FF, #3B5BFF)' }} />
-              27 composable packages
+              28 composable packages
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#f4f4f5] leading-tight">
               Everything you need<br />
