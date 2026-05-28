@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sora: 'Sora', sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --bg: #09090b;
+  --bg-surface: #111117;
+  --bg-elevated: #18181f;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+  --brand-cyan: #00C2FF;
+  --brand-blue: #3B5BFF;
+  --brand-purple: #8B5CF6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-inter);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sora), sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(to right, #00C2FF, #3B5BFF, #7A3CFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #00C2FF, #3B5BFF, #7A3CFF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(16px);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 60px -10px rgba(59, 91, 255, 0.35);
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 80px -20px rgba(59, 91, 255, 0.3), 0 0 40px -10px rgba(122, 60, 255, 0.2);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .surface {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+  }
+
+  .elevated {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+  }
+}
+
+/* Animated gradient for buttons */
+.btn-gradient {
+  background: linear-gradient(135deg, #00C2FF 0%, #3B5BFF 50%, #7A3CFF 100%);
+  background-size: 200% 200%;
+  transition: background-position 0.4s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.btn-gradient:hover {
+  background-position: right center;
+  box-shadow: 0 8px 32px -8px rgba(59, 91, 255, 0.5);
+  transform: translateY(-1px);
+}
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+/* Hero background mesh */
+.hero-mesh {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(59, 91, 255, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 50%, rgba(0, 194, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 20% 60%, rgba(122, 60, 255, 0.08) 0%, transparent 50%);
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Code syntax colors */
+.token-keyword  { color: #7A3CFF; }
+.token-string   { color: #00C2FF; }
+.token-comment  { color: #52525b; font-style: italic; }
+.token-fn       { color: #3B5BFF; }
+.token-param    { color: #a5b4fc; }
+.token-type     { color: #67e8f9; }
+.token-const    { color: #f4f4f5; }
+.token-punct    { color: #71717a; }
+.token-num      { color: #fb923c; }
+.token-prop     { color: #c4b5fd; }
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+/* Noise texture */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
