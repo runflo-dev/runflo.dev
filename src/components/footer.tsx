@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col items-center sm:items-start gap-4">
           <Logo size="sm" />
           <p className="text-sm text-[#71717a] leading-relaxed max-w-xs text-center sm:text-left">
-            The framework for enterprise-grade AI agents. Built on Temporal.
+            The framework for enterprise-grade AI agents.
           </p>
           <div className="flex items-center gap-3">
             <a

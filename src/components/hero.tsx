@@ -9,7 +9,7 @@ const terminalLines = [
   { delay: 1300, type: 'output',  text: '' },
   { delay: 1400, type: 'cmd',     text: 'cd my-agent && runflo dev' },
   { delay: 1900, type: 'output',  text: '' },
-  { delay: 2000, type: 'success', text: 'Temporal started (localhost:7233)' },
+  { delay: 2000, type: 'success', text: 'Runtime started (localhost:7233)' },
   { delay: 2200, type: 'success', text: 'Worker started on queue: default' },
   { delay: 2400, type: 'success', text: 'HTTP server at http://localhost:3000' },
   { delay: 2600, type: 'output',  text: '' },

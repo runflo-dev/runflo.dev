@@ -77,10 +77,10 @@ const tabs = [
     lines: [
       { indent: 0, tokens: [{ t: 'keyword', v: 'import' }, { t: 'punct', v: ' { ' }, { t: 'type', v: 'runfloClient' }, { t: 'punct', v: ', ' }, { t: 'fn', v: 'defineConfig' }, { t: 'punct', v: ' } ' }, { t: 'keyword', v: 'from' }, { t: 'string', v: " '@runflo/core'" }] },
       { indent: 0, tokens: [] },
-      { indent: 0, tokens: [{ t: 'comment', v: '// runflo.config.ts — single place for Temporal config' }] },
+      { indent: 0, tokens: [{ t: 'comment', v: '// runflo.config.ts — single place for all config' }] },
       { indent: 0, tokens: [{ t: 'keyword', v: 'const' }, { t: 'const', v: ' config' }, { t: 'punct', v: ' = ' }, { t: 'fn', v: 'defineConfig' }, { t: 'punct', v: '({' }] },
       { indent: 1, tokens: [{ t: 'prop', v: 'mode' }, { t: 'punct', v: ': ' }, { t: 'string', v: "'cloud'" }, { t: 'punct', v: ',' }, { t: 'comment', v: ' // docker | cloud | self-hosted | memory' }] },
-      { indent: 1, tokens: [{ t: 'prop', v: 'namespace' }, { t: 'punct', v: ': ' }, { t: 'const', v: 'process' }, { t: 'punct', v: '.env.' }, { t: 'prop', v: 'TEMPORAL_NAMESPACE' }, { t: 'punct', v: '!,' }] },
+      { indent: 1, tokens: [{ t: 'prop', v: 'namespace' }, { t: 'punct', v: ': ' }, { t: 'const', v: 'process' }, { t: 'punct', v: '.env.' }, { t: 'prop', v: 'RUNFLO_NAMESPACE' }, { t: 'punct', v: '!,' }] },
       { indent: 1, tokens: [{ t: 'prop', v: 'queue' }, { t: 'punct', v: ': ' }, { t: 'string', v: "'default'" }, { t: 'punct', v: ',' }] },
       { indent: 0, tokens: [{ t: 'punct', v: '})' }] },
       { indent: 0, tokens: [] },

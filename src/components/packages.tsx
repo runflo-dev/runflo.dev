@@ -96,36 +96,6 @@ export default function Packages() {
           </a>
         </div>
 
-        {/* Architecture note */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#111117] border border-white/[0.07]">
-          <div className="flex flex-col sm:flex-row gap-6 items-start">
-            <div className="flex-shrink-0">
-              <div className="text-xs font-semibold uppercase tracking-widest text-[#52525b] mb-3">Architecture principle</div>
-              <div className="font-mono text-xs text-[#71717a] leading-[1.9]">
-                <span className="text-[#52525b]">@temporalio/*</span><br />
-                <span className="text-[#3f3f46] ml-4">↓</span><br />
-                <span className="gradient-text font-semibold">@runflo/core</span>
-                <span className="text-[#52525b] ml-2 text-[10px]">← only package that touches Temporal</span><br />
-                <span className="text-[#3f3f46] ml-4">↓</span><br />
-                <span className="text-[#a1a1aa] ml-4">@runflo/agents</span>
-                <span className="text-[#52525b] ml-2 text-[10px]">← depends on core only</span><br />
-                <span className="text-[#a1a1aa] ml-4">@runflo/memory</span>
-                <span className="text-[#52525b] ml-2 text-[10px]">← depends on core only</span><br />
-                <span className="text-[#a1a1aa] ml-4">@runflo/tools</span>
-                <span className="text-[#52525b] ml-2 text-[10px]">← depends on core only</span>
-              </div>
-            </div>
-            <div className="w-px bg-white/[0.06] self-stretch hidden sm:block" />
-            <div className="text-sm text-[#71717a] leading-relaxed">
-              <strong className="text-[#f4f4f5] block mb-2">Temporal is an implementation detail.</strong>
-              Developers using runflo never import{' '}
-              <code className="text-[#00C2FF] font-mono text-xs">@temporalio/*</code>{' '}
-              directly. They import from{' '}
-              <code className="text-[#00C2FF] font-mono text-xs">@runflo/core</code>{' '}
-              only. This means runflo can evolve or swap the underlying execution engine without breaking any application code.
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

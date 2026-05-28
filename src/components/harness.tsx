@@ -15,7 +15,7 @@ const roles = [
     border: 'border-[#3B5BFF]/30',
     bg: 'bg-[#3B5BFF]/[0.07]',
     dot: 'bg-[#3B5BFF]',
-    desc: 'Executes the spec using tools and code. Resets context automatically when full — Temporal holds all state.',
+    desc: 'Executes the spec using tools and code. Resets context automatically when full — runflo holds all state durably.',
   },
   {
     name: 'Evaluator',
@@ -36,12 +36,12 @@ const benefits = [
   {
     icon: RefreshCw,
     title: 'Automatic context resets',
-    desc: 'When context fills up, the agent resets cleanly. Temporal preserves all state — no work is lost.',
+    desc: 'When context fills up, the agent resets cleanly. runflo preserves all state — no work is lost.',
   },
   {
     icon: GitBranch,
     title: 'Full audit trail',
-    desc: 'Every planner decision, generator step, and evaluator verdict is recorded in Temporal history.',
+    desc: 'Every planner decision, generator step, and evaluator verdict is recorded and fully replayable.',
   },
   {
     icon: Zap,
@@ -142,7 +142,7 @@ export default function Harness() {
                 </div>
                 <div>
                   <div className="text-xs font-medium text-[#f4f4f5]">Context window resets automatically at 85%</div>
-                  <div className="text-[11px] text-[#52525b]">Temporal holds all state — agent resumes with a clean slate</div>
+                  <div className="text-[11px] text-[#52525b]">runflo holds all state — agent resumes with a clean slate</div>
                 </div>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500/[0.07] border border-green-500/20">

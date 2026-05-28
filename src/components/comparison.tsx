@@ -1,7 +1,7 @@
 import { Check, X, Minus } from 'lucide-react'
 
 const stats = [
-  { n: '10M+', label: 'Concurrent workflows', sub: 'Temporal handles the scale' },
+  { n: '10M+', label: 'Concurrent workflows', sub: 'Durable execution at any scale' },
   { n: '∞', label: 'Task duration', sub: 'No timeout. Runs until done.' },
   { n: '0', label: 'State lost on crash', sub: 'Durable execution guarantee' },
   { n: '1', label: 'Command to deploy', sub: 'runflo deploy — that is it' },
