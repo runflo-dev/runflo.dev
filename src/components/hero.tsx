@@ -43,8 +43,9 @@ export default function Hero() {
 
             {/* Headline — exact copy from Confluence */}
             <h1 className="text-5xl sm:text-6xl lg:text-[62px] font-bold leading-[1.05] tracking-tight text-[#f4f4f5]">
-              <span className="whitespace-nowrap">Build enterprise-grade</span><br />
-              <span className="gradient-text">AI agents</span>
+              Enterprise-grade<br />
+              <span className="gradient-text">AI agents</span><br />
+              that don't fail
             </h1>
 
             {/* Sub-headline — exact copy from Confluence */}
