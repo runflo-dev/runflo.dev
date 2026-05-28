@@ -1,19 +1,6 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp-mail.outlook.com',
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-  tls: {
-    ciphers: 'SSLv3',
-  },
-})
-
 export async function POST(req: Request) {
   try {
     const { name, email, role, message } = await req.json()
@@ -21,6 +8,24 @@ export async function POST(req: Request) {
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 })
     }
+
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error('Missing SMTP_USER or SMTP_PASS env vars')
+      return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 })
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.office365.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    })
 
     await transporter.sendMail({
       from: `"runflo waitlist" <${process.env.SMTP_USER}>`,
@@ -44,8 +49,9 @@ export async function POST(req: Request) {
     })
 
     return NextResponse.json({ ok: true })
-  } catch (err) {
-    console.error('Mail error:', err)
-    return NextResponse.json({ error: 'Failed to send' }, { status: 500 })
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error('Mail error:', message)
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }
