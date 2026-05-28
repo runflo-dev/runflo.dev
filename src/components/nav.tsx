@@ -32,12 +32,9 @@ export default function Nav() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Logo + tagline */}
-        <Link href="/" className="flex-shrink-0 hover:opacity-90 transition-opacity flex items-center gap-3">
+        {/* Logo */}
+        <Link href="/" className="flex-shrink-0 hover:opacity-90 transition-opacity">
           <Logo size="sm" />
-          <span className="hidden lg:block text-xs text-[#52525b] border-l border-white/[0.08] pl-3">
-            The framework for enterprise-grade AI agents.
-          </span>
         </Link>
 
         {/* Desktop links */}
