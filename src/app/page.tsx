@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <Harness />
       <Problem />
       <Packages />
       <CodeShowcase />
-      <Harness />
       <Contact />
     </main>
   )
