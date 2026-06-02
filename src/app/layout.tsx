@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Sora, Inter, JetBrains_Mono } from 'next/font/google'
-import Nav from '@/components/nav'
-import Footer from '@/components/footer'
+// Hidden during "under construction" — restore alongside src/app/page.tsx.
+// import Nav from '@/components/nav'
+// import Footer from '@/components/footer'
 import './globals.css'
 
 const sora = Sora({
@@ -25,7 +26,7 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'runflo — The Next.js of AI Agents',
+    default: 'runflo — Under construction',
     template: '%s | runflo',
   },
   description:
@@ -70,9 +71,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable} ${mono.variable}`}>
       <body className="antialiased bg-[#09090b] text-[#f4f4f5]">
-        <Nav />
+        {/* Nav + Footer are hidden while the site is under construction.
+            Re-enable them (and restore src/app/page.tsx) to go live. */}
+        {/* <Nav /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   )

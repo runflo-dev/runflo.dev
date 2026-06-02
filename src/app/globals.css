@@ -160,6 +160,15 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
 }
 
+/* Under-construction shimmer bar */
+.construction-shimmer {
+  animation: construction-slide 2.2s ease-in-out infinite;
+}
+@keyframes construction-slide {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(420%); }
+}
+
 /* Noise texture */
 .noise-overlay::after {
   content: '';
